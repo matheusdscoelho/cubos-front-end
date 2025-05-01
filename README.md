@@ -54,7 +54,7 @@ npm install
 3. Configure o arquivo `.env.local` com a URL da API:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3000
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
 4. Rode o projeto:
