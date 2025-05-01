@@ -1,6 +1,5 @@
 ---
 
-```
 # 🎬 Cubos Filmes - Frontend
 
 Este é o frontend do projeto **Cubos Filmes**, desenvolvido com **Next.js** e **React**. Ele se conecta a uma API backend para permitir o gerenciamento de um catálogo de filmes com autenticação de usuários.
@@ -55,7 +54,7 @@ npm install
 3. Configure o arquivo `.env.local` com a URL da API:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3000
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
 4. Rode o projeto:
@@ -97,6 +96,5 @@ Desenvolvido como parte do projeto Cubos Filmes.
 ## 📄 Licença
 
 Este projeto está sob a licença MIT.
-```
 
 ---
