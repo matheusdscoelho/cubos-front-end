@@ -8,6 +8,7 @@ import BackButton from "@/app/components/BackButton";
 import { useMovie, useEditMovie } from "@/lib/queries";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const schema = z.object({
   title: z.string().min(1),
@@ -73,12 +74,14 @@ export default function EditMoviePage() {
       if (imageFile) formData.append("image", imageFile);
 
       await editMutation.mutateAsync({ id: movieId, data: formData });
+      toast.success("Filme editado com sucesso!");
       router.push(`/movies/${movieId}`);
     } catch (err) {
       type ErrorResponse = { response?: { data?: { error?: string } } };
       const errorMsg =
         (err as ErrorResponse)?.response?.data?.error || "Erro ao fazer login";
       setServerError(errorMsg);
+      toast.error(errorMsg);
     }
   };
 

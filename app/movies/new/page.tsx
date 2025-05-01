@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useCreateMovie } from "@/lib/queries";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const schema = z.object({
   title: z.string().min(1, "Título é obrigatório"),
@@ -59,12 +60,14 @@ export default function NewMoviePage() {
       }
 
       await createMovie.mutateAsync(formData);
+      toast.success("Filme criado com sucesso!");
       router.push("/movies");
     } catch (err) {
       type ErrorResponse = { response?: { data?: { error?: string } } };
       const errorMsg =
         (err as ErrorResponse)?.response?.data?.error || "Erro ao fazer login";
       setServerError(errorMsg);
+      toast.error(errorMsg);
     }
   };
 
