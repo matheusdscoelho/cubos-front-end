@@ -1,6 +1,5 @@
 ---
 
-```
 # 🎬 Cubos Filmes - Frontend
 
 Este é o frontend do projeto **Cubos Filmes**, desenvolvido com **Next.js** e **React**. Ele se conecta a uma API backend para permitir o gerenciamento de um catálogo de filmes com autenticação de usuários.
@@ -97,6 +96,5 @@ Desenvolvido como parte do projeto Cubos Filmes.
 ## 📄 Licença
 
 Este projeto está sob a licença MIT.
-```
 
 ---
