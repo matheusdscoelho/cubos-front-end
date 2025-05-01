@@ -29,6 +29,7 @@ export const useMovies = (filters: MovieFilters) =>
         if (filters.dateStart) params.append('dateStart', filters.dateStart)
         if (filters.dateEnd) params.append('dateEnd', filters.dateEnd)
         if (filters.minBudget) params.append('minBudget', filters.minBudget)
+        if (filters.maxBudget) params.append('maxBudget', filters.maxBudget)
         params.append('page', String(filters.page ?? 1))
         params.append('limit', String(filters.limit ?? 9))
   

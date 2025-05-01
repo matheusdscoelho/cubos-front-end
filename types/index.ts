@@ -5,6 +5,7 @@ export type MovieFilters = {
   dateStart?: string;
   dateEnd?: string;
   minBudget?: string;
+  maxBudget?: string;
   page?: number;
   limit?: number;
 };

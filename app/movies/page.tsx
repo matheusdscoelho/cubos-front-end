@@ -20,6 +20,7 @@ export default function MoviesPage() {
   const [dateStart, setDateStart] = useState('');
   const [dateEnd, setDateEnd] = useState('');
   const [minBudget, setMinBudget] = useState('');
+  const [maxBudget, setMaxBudget] = useState('');
 
   const { data, isLoading } = useMovies({
     search,
@@ -28,6 +29,7 @@ export default function MoviesPage() {
     dateStart,
     dateEnd,
     minBudget,
+    maxBudget,
     page,
     limit: ITEMS_PER_PAGE,
   });
@@ -94,6 +96,15 @@ export default function MoviesPage() {
               type="number"
               value={minBudget}
               onChange={setMinBudget}
+              className="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-white"
+            />
+          </div>
+          <div>
+            <label className="block text-sm mb-1">Orçamento máximo</label>
+            <DebouncedInput
+              type="number"
+              value={maxBudget}
+              onChange={setMaxBudget}
               className="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-white"
             />
           </div>
