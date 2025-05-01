@@ -58,6 +58,7 @@ export default function Navbar() {
           <button
             className="md:hidden text-gray-700 dark:text-white"
             onClick={() => setSidebarOpen(true)}
+            aria-label="Abrir menu"
           >
             <Menu size={28} />
           </button>
