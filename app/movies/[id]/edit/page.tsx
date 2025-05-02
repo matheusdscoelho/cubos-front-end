@@ -79,7 +79,7 @@ export default function EditMoviePage() {
     } catch (err) {
       type ErrorResponse = { response?: { data?: { error?: string } } };
       const errorMsg =
-        (err as ErrorResponse)?.response?.data?.error || "Erro ao fazer login";
+        (err as ErrorResponse)?.response?.data?.error || "Erro ao edtiar filme";
       setServerError(errorMsg);
       toast.error(errorMsg);
     }
