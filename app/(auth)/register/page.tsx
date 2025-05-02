@@ -149,7 +149,7 @@ export default function RegisterPage() {
             className='w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded disabled:opacity-50 flex items-center justify-center gap-2'
           >
             {(registerMutation.isPending || loginMutation.isPending) && (
-              <Spinner />
+              <Spinner data-testid="spinner"/>
             )}
             {registerMutation.isPending || loginMutation.isPending
               ? "Registrando..."

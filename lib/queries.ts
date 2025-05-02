@@ -33,7 +33,7 @@ export const useMovies = (filters: MovieFilters) =>
         params.append('page', String(filters.page ?? 1))
         params.append('limit', String(filters.limit ?? 9))
   
-        const res = await api.get(`/movies?${params.toString()}`)
+        const res = await api.get(`api/movies?${params.toString()}`)
         return res.data
       },
     })
@@ -43,7 +43,7 @@ export const useMovie = (id: string) =>
   useQuery({
     queryKey: ['movie', id],
     queryFn: async () => {
-      const res = await api.get(`/movies/${id}`)
+      const res = await api.get(`api/movies/${id}`)
       return res.data
     },
     enabled: !!id,
@@ -53,7 +53,7 @@ export const useMovie = (id: string) =>
 export const useEditMovie = () =>
   useMutation({
     mutationFn: (payload: { id: string; data: FormData }) =>
-      api.put(`/movies/${payload.id}`, payload.data),
+      api.put(`api/movies/${payload.id}`, payload.data),
   })
 
 
@@ -61,5 +61,5 @@ export const useEditMovie = () =>
 export const useCreateMovie = () =>
   useMutation({
     mutationFn: (formData: FormData) =>
-      api.post('/movies', formData),
+      api.post('api/movies', formData),
   })

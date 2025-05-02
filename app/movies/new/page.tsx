@@ -13,8 +13,14 @@ const schema = z.object({
   title: z.string().min(1, "Título é obrigatório"),
   description: z.string().min(1, "Descrição é obrigatória"),
   releaseDate: z.string().min(1, "Data é obrigatória"),
-  duration: z.number().min(1, "Duração em minutos"),
-  budget: z.number().min(0, "Orçamento deve ser positivo"),
+  duration: z.preprocess(
+    (a) => (a === '' || a === undefined ? 0 : Number(a)),
+    z.number({ invalid_type_error: "Duração em minutos" }).min(1, "Duração em minutos")
+  ),
+  budget: z.preprocess(
+    (a) => (a === '' || a === undefined ? 0 : Number(a)),
+    z.number({ invalid_type_error: "Orçamento deve ser positivo" }).min(0, "Orçamento deve ser positivo")
+  ),
   image: z.any().optional(),
 });
 

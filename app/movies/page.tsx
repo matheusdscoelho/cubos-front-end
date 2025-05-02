@@ -22,7 +22,7 @@ export default function MoviesPage() {
   const [minBudget, setMinBudget] = useState('');
   const [maxBudget, setMaxBudget] = useState('');
 
-  const { data, isLoading } = useMovies({
+  const { data, isLoading, error } = useMovies({
     search,
     durationMin,
     durationMax,
@@ -129,6 +129,7 @@ export default function MoviesPage() {
         </div>
       )}
 
+      {error && <div className="text-center text-red-500 mt-4">Erro ao carregar filmes</div>}
       {isLoading ? (
         <div className="flex justify-center mt-10">
           <Spinner size={96} />

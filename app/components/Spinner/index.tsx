@@ -13,6 +13,7 @@ export default function Spinner({
 
   return (
     <div
+      data-testid="spinner" 
       style={{
         width: size,
         height: size,
